@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevLinks</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <!-- comando para criar uma div já com id #profile + enter (exemplo) -->
+      <div id="profile">
+        <!-- alt é o alternativo, caso a pessoa não veja a imagem, ou tenha limitação, deve-se descrever a imagem -->
+        <img
+          src="./assets/avatar.png"
+          alt="Foto de Mayk Brito com fundo amarelo"
+        />
+        <p>@maykbrito</p>
+      </div>
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+
+      <ul>
+        <!-- aqui criamos lista, não ordenada -->
+        <li>
+          <!-- aqui temos os itens da lista -->
+          <a href="#">Inscrever-se no NLW</a>
+        </li>
+        <li>
+          <a href="#">Baixar meu e-book</a>
+        </li>
+        <li>
+          <a href="#">Ver meu portifólio</a>
+        </li>
+        <li>
+          <!-- Para abrir outra aba quando se clica em um link, usamos o target="_blank" -->
+          <a
+            href="https://www.linkedin.com/in/amandaevelynpaivatb/"
+            target="_blank"
+            >Conheça o meu linkedIn</a
+          >
+        </li>
+      </ul>
+      <div id="social-links">
+        <a
+          href="https://www.linkedin.com/in/amandaevelynpaivatb/"
+          target="_blank"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+
+        <a href="https://github.com/Amandaep96" target="_blank">
+          <ion-icon name="logo-github"></ion-icon
+        ></a>
+
+        <a href="https://github.com/Amandaep96" target="_blank">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
+        <a href="https://github.com/Amandaep96" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </div>
+
+      <footer>
+        <!-- Informações que vão aparecer no rodapé -->
+        Feito com 💜 por Amanda Paiva
+      </footer>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

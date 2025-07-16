@@ -1,0 +1,184 @@
+/* Com o seletor universal (*), vamos tirar as margens que o navegador dá por padrão */
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing vai fazer o calculo do box de forma correta */
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  background-image: var(--bg-url);
+
+  /* Não repetir a imagem de fundo */
+  /* background-repeat: no-repeat; */
+
+  /* top center alinha a imagem no topo e ao centro, em relação ao eixo x e y da imagem */
+  /* background-position: top center; */
+
+  /* Vai cobrir toda a área do elemento, mantendo a proporção da tela */
+  /* background-size: cover; */
+
+  /* Agrupar tudo o que foi escrito antes em uma única propriedade, chama de shorthand ou atalho*/
+  background: var(--bg-url) no-repeat top center / cover;
+}
+
+/* body * é o seletor universal, vai aplicar em todos os elementos do body, e vamos colocar a fonte no body */
+body * {
+  font-family: "Inter", sans-serif;
+  /* Aqui iremos usar var, como variavel para chamar o que foi definido em .root */
+  color: var(--text-color);
+}
+
+/* hashtag é o seletor para id */
+#container {
+  width: 360px;
+  /* margim auto, vai colocar margem automatica dos lados e embaixo, não coloca acima da caixa  */
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  /* geralmente no css não é preciso definir altura, pq geralmente segue o conteúdo da página, assim como a caixa. */
+  /* quando temos o display block, automaricamente o proximo elemento fica em baixo, e o elemento da div ocupa a largura definina, e se ele for definida. */
+  /* Se o display for inline, o elemento não ocupa a largura total, e os elementos ficam lado a lado. */
+  /* div é um elemento de block e img é um elemento inline */
+  /* em display inline não se aplica margin auto */
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  height: 32px;
+  width: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  /* Para sobrepor dois elementos, em camadas */
+  position: absolute;
+  top: 50%;
+  /* podemos usar z-index para controlar a sobreposição */
+  z-index: 1;
+  left: 0;
+  /* O transform é usado para mover o botão em relação ao eixo y. */
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: var(--stroke-color) 1px solid;
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* Links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+/* Como o li está dentro do container, ele vai ocupar o tamanho definido, se colocar ul li a ele vai ocupar somente o tamanho do elemento, pq ele é display inline */
+/* display flex vai tentar colocar os elementos lado a lado, adaptando a caixa  */
+ul li a {
+  border: 1px solid var(--stroke-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+
+  /* acima de 400 já é negrito/bold */
+  font-weight: 500;
+
+  /* transição de cor quando passa o rato por cima da caixa */
+  transition: background 0.2s;
+}
+
+/* pseudo-selector: são uma forma de selecionar elementos HTML com base em seu estado ou posição em relação a outros elementos. */
+ul li a:hover {
+  border: 1.5px solid var(--text-color);
+  background: var(--surface-color-hover);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  /* Não usamos gap aqui vai somar ao padding. E só vamos ativar o hover quando passar o rato por cima.  */
+
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  /* para alinhar o hover redondo ao eixo dele */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
