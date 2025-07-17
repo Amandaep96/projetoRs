@@ -51,7 +51,10 @@ body * {
 
 /* hashtag é o seletor para id */
 #container {
-  width: 360px;
+  /* Aqui vamos deixar o container com 100% para ser responsivo a todos os dispositivos */
+  width: 100%;
+  /* Em seguida vamos limitar o tamanho do container para ele não acompanhar o tamanho da tela. */
+  max-width: 580px;
   /* margim auto, vai colocar margem automatica dos lados e embaixo, não coloca acima da caixa  */
   margin: 56px auto 0px;
   padding: 0 24px;
@@ -113,6 +116,7 @@ body * {
   height: 24px;
   background: var(--surface-color);
   border: var(--stroke-color) 1px solid;
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
