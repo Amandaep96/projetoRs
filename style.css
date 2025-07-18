@@ -27,8 +27,6 @@
 }
 
 body {
-  background-image: var(--bg-url);
-
   /* Não repetir a imagem de fundo */
   /* background-repeat: no-repeat; */
 
@@ -40,6 +38,7 @@ body {
 
   /* Agrupar tudo o que foi escrito antes em uma única propriedade, chama de shorthand ou atalho*/
   background: var(--bg-url) no-repeat top center / cover;
+  height: 100vh;
 }
 
 /* body * é o seletor universal, vai aplicar em todos os elementos do body, e vamos colocar a fonte no body */
@@ -185,4 +184,18 @@ footer {
   padding: 24px;
   text-align: center;
   font-size: 14px;
+}
+
+/* Media queries - é uma at role  */
+/* tudo que começa com @ em css é um at role */
+
+/* lê-se: da sua largura minima de 700px para cima, vai adicionar as regras que estão entre chavetas  */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
