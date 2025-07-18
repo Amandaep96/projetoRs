@@ -21,9 +21,9 @@ function toggleMode() {
   }
 
   // pegar a tag alt e substituir o texto
-  if (html.classList.contains("light")) {
-    img.setAttribute("alt", "Foto de Mayk Brito com fundo azul")
-  } else {
-    img.setAttribute("alt", "Foto de Mayk Brito com fundo amarelo")
-  }
+  // if (html.classList.contains("light")) {
+  //   img.setAttribute("alt", "Foto de Mayk Brito com fundo azul")
+  // } else {
+  //   img.setAttribute("alt", "Foto de Mayk Brito com fundo amarelo")
+  // }
 }
