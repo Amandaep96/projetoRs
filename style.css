@@ -102,11 +102,17 @@ body * {
   left: 0;
   /* O transform é usado para mover o botão em relação ao eixo y. */
   transform: translateY(-50%);
+  animation: slide-back 0.4s;
+  /* aqui n foi preciso colocar o forwards pq já havia colocado no .light e ele mantem as propriedades finais, seria redundância coloca-lo novamente */
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
+  /* o forwards faz com que a animação mantenha o estado final definido no keyframes */
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -186,8 +192,8 @@ footer {
   font-size: 14px;
 }
 
-/* Media queries - é uma at role  */
-/* tudo que começa com @ em css é um at role */
+/* Media queries - é uma at rule  */
+/* tudo que começa com @ em css é um at rule */
 
 /* lê-se: da sua largura minima de 700px para cima, vai adicionar as regras que estão entre chavetas  */
 @media (min-width: 700px) {
@@ -197,5 +203,25 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* criar outro at rules, chamado @keyframes, vai fazer com que a bolinha do dar e light mode deslize com mais delicadeza  */
+/* o nome do identificadro pode ser o que vc quiser, boa prática ser algo intuitivo sobre o que vai fazer */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
